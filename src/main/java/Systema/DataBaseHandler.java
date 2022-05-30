@@ -1,12 +1,10 @@
 package Systema;
 import Service.Client;
+import Service.Product;
 import Service.User;
 
-import java.sql.Connection;
-import java.sql.DriverManager;
-import java.sql.PreparedStatement;
-import java.sql.SQLException;
-import java.sql.ResultSet;
+import java.sql.*;
+
 public class DataBaseHandler extends Data {
     Connection dbConnection;
     public Connection getDbConnection()
@@ -66,6 +64,21 @@ public class DataBaseHandler extends Data {
         }
 
     }
+    public void addProduct(Product product){
+        String insert = "INSERT INTO "+Const.PRODUCT_TABLE+"("+Const.PRODUCT_NAME+"," +Const.PRODUCT_PRICE+")" +"VALUES(?,?)";
+
+        try{
+            PreparedStatement prSt = getDbConnection().prepareStatement(insert);
+            prSt.setString(1,product.getNameProduct());
+            prSt.setInt(2,product.getPrice());
+            prSt.executeUpdate();
+        }catch(SQLException e){
+            e.printStackTrace();
+        } catch (ClassNotFoundException e) {
+            e.printStackTrace();
+        }
+
+    }
     public ResultSet getClient(Client client){
         ResultSet resultSet=null;
         String select="SELECT * FROM " + Const.CLIENT_TABLE +" WHERE "+ Const.CLIENT_FIO+"=? AND "+Const.CLIENT_DATA+"=?";
@@ -80,5 +93,17 @@ public class DataBaseHandler extends Data {
             e.printStackTrace();
         }
         return resultSet;
+    }
+    public void deleteDetail(String name) {
+        String sql = "delete from Order WHERE Name='" + name + "'";
+
+
+        try {
+            PreparedStatement prSt = getDbConnection().prepareStatement(sql);
+            prSt.executeUpdate(sql);
+
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
     }
 }

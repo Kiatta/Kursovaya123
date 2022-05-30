@@ -4,6 +4,8 @@
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.PasswordField?>
 <?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
@@ -11,7 +13,7 @@
    <children>
       <AnchorPane layoutY="68.0" prefHeight="333.0" prefWidth="700.0" style="-fx-background-color: #E9D5CA;">
          <children>
-            <Label layoutX="226.0" layoutY="36.0" prefHeight="53.0" prefWidth="230.0" text="Авторизация" textAlignment="CENTER" textFill="#363062">
+            <Label layoutX="226.0" layoutY="35.0" prefHeight="53.0" prefWidth="230.0" text="Авторизация" textAlignment="CENTER" textFill="#363062">
                <font>
                   <Font name="Bookman Old Style" size="34.0" />
                </font>
@@ -30,5 +32,14 @@
             <Font name="Bookman Old Style" size="35.0" />
          </font>
       </Label>
+      <Button fx:id="exit" layoutX="637.0" layoutY="23.0" mnemonicParsing="false" style="-fx-background-color: transparent;">
+         <graphic>
+            <ImageView fx:id="exit1" fitHeight="17.0" fitWidth="19.0" mouseTransparent="true" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../../icons/icons8-удалить-24.png" />
+               </image>
+            </ImageView>
+         </graphic>
+      </Button>
    </children>
 </AnchorPane>

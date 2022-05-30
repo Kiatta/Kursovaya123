@@ -5,13 +5,15 @@
 <?import javafx.scene.control.TableColumn?>
 <?import javafx.scene.control.TableView?>
 <?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
 <?import javafx.scene.text.Font?>
 
 <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="700.0" style="-fx-background-color: #827397;" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.kursovaya.appController">
     <children>
         <AnchorPane layoutY="68.0" prefHeight="333.0" prefWidth="700.0" style="-fx-background-color: #E9D5CA;">
             <children>
-                <Button id="addClient" fx:id="addClient" mnemonicParsing="false" prefHeight="33.0" prefWidth="151.0" style="-fx-background-color: #827397;" text="Добавить клиента">
+                <Button id="addClient" fx:id="addClient" layoutY="6.0" mnemonicParsing="false" prefHeight="33.0" prefWidth="151.0" style="-fx-background-color: #827397;" text="Добавить клиента">
                     <font>
                         <Font size="15.0" />
                     </font>
@@ -21,7 +23,7 @@
                   <Font size="15.0" />
                </font>
             </Button>
-            <Button id="delClient" fx:id="delClient" layoutY="142.0" mnemonicParsing="false" prefHeight="31.0" prefWidth="151.0" style="-fx-background-color: #827397;" text="Удалить клинета">
+            <Button id="delClient" fx:id="delClient" layoutY="135.0" mnemonicParsing="false" prefHeight="31.0" prefWidth="151.0" style="-fx-background-color: #827397;" text="Удалить клинета">
                <font>
                   <Font size="15.0" />
                </font>
@@ -40,7 +42,7 @@
                   <Font size="15.0" />
                </font>
             </Button>
-            <Button id="updClient" fx:id="updClient" layoutY="48.0" mnemonicParsing="false" prefHeight="33.0" prefWidth="151.0" style="-fx-background-color: #827397;" text="Изменить">
+            <Button id="updClient" fx:id="updClient" layoutY="51.0" mnemonicParsing="false" prefHeight="33.0" prefWidth="151.0" style="-fx-background-color: #827397;" text="Изменить">
                <font>
                   <Font size="15.0" />
                </font>
@@ -57,5 +59,23 @@
                 <Font name="Bookman Old Style" size="35.0" />
             </font>
         </Label>
+        <Button fx:id="back" blendMode="SRC_ATOP" layoutX="603.0" layoutY="23.0" mnemonicParsing="false" prefHeight="17.0" prefWidth="17.0" style="-fx-background-color: transparent;">
+            <graphic>
+                <ImageView fx:id="backs" fitHeight="17.0" fitWidth="44.0" pickOnBounds="true" preserveRatio="true">
+                    <image>
+                        <Image url="@../../../icons/icons8-назад-24.png" />
+                    </image>
+                </ImageView>
+            </graphic>
+        </Button>
+        <Button fx:id="exits" layoutX="637.0" layoutY="23.0" mnemonicParsing="false" style="-fx-background-color: transparent;">
+            <graphic>
+                <ImageView fx:id="exit" fitHeight="17.0" fitWidth="19.0" mouseTransparent="true" pickOnBounds="true" preserveRatio="true">
+                    <image>
+                        <Image url="@../../../icons/icons8-удалить-24.png" />
+                    </image>
+                </ImageView>
+            </graphic>
+        </Button>
     </children>
 </AnchorPane>

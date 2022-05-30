@@ -6,6 +6,8 @@
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
 
 <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="700.0" style="-fx-background-color: #827397;" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.kursovaya.addClientControll">
     <children>
@@ -32,5 +34,23 @@
                 <Font name="Bookman Old Style" size="35.0" />
             </font>
         </Label>
+        <Button fx:id="back1" blendMode="SRC_ATOP" layoutX="603.0" layoutY="23.0" mnemonicParsing="false" prefHeight="17.0" prefWidth="17.0" style="-fx-background-color: transparent;">
+            <graphic>
+                <ImageView fx:id="backs" fitHeight="17.0" fitWidth="44.0" pickOnBounds="true" preserveRatio="true">
+                    <image>
+                        <Image url="@../../../icons/icons8-назад-24.png" />
+                    </image>
+                </ImageView>
+            </graphic>
+        </Button>
+        <Button fx:id="exit1" layoutX="637.0" layoutY="23.0" mnemonicParsing="false" style="-fx-background-color: transparent;">
+            <graphic>
+                <ImageView fx:id="exit" fitHeight="17.0" fitWidth="19.0" mouseTransparent="true" pickOnBounds="true" preserveRatio="true">
+                    <image>
+                        <Image url="@../../../icons/icons8-удалить-24.png" />
+                    </image>
+                </ImageView>
+            </graphic>
+        </Button>
     </children>
 </AnchorPane>

@@ -5,6 +5,8 @@ import java.net.URL;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ResourceBundle;
+
+import Anim.Anim;
 import javafx.scene.control.Alert;
 
 import Service.User;
@@ -17,9 +19,13 @@ import javafx.scene.control.Button;
 import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
 import javafx.stage.Stage;
+import javafx.stage.StageStyle;
 
 public class ControllAuth {
 
+
+    @FXML
+    private Button exit;
     @FXML
     private ResourceBundle resources;
 
@@ -47,6 +53,12 @@ public class ControllAuth {
                         System.out.println("Login and password is empty");
 
             });
+        exit.setOnAction(event -> {
+            System.exit(0);
+
+
+        });
+
 
 
 
@@ -74,11 +86,10 @@ public class ControllAuth {
                 authSign();
             }
             else {
-                Alert alert = new Alert(Alert.AlertType.ERROR);
-                alert.setTitle("Error");
-                alert.setHeaderText(null);
-                alert.setContentText("Пользователь не найден, проверьте логин и пароль");
-                alert.showAndWait();
+                Anim userLoginAnim = new Anim(logField);
+                Anim userPassAnim = new Anim(passField);
+                userLoginAnim.playAnim();
+                userPassAnim.playAnim();
 
             }
         }
@@ -99,9 +110,9 @@ public class ControllAuth {
         Parent root = (Parent)loader.getRoot();
         stage = new Stage();
         stage.setScene(new Scene(root));
-        stage.setTitle("4Clients apps");
-        stage.setResizable(false);
+        stage.initStyle(StageStyle.UNDECORATED);
         stage.show();
     }
+
 
 }

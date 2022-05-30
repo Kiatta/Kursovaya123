@@ -1,46 +1,56 @@
 package com.example.kursovaya;
 
-import Service.User;
+import Anim.Anim;
+import Service.Product;
+import Systema.DataBaseHandler;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
-import javafx.scene.control.PasswordField;
+import javafx.scene.control.TableView;
 import javafx.scene.control.TextField;
-
+import javafx.scene.image.ImageView;
 import javafx.stage.Stage;
 import javafx.stage.StageStyle;
 
 import java.io.IOException;
 
-public class addMenControl {
+public class ProductControll {
 
     @FXML
-    private Button addButton;
+    private TextField Price;
+
     @FXML
-    private Button exits;
+    private TableView<?> ProductTable;
+
+    @FXML
+    private Button addPr;
+
     @FXML
     private Button back;
 
     @FXML
-    private TextField first_name;
+    private ImageView backs;
 
     @FXML
-    private TextField addLog;
+    private Button delPr;
 
     @FXML
-    private TextField second_name;
+    private ImageView exit;
 
     @FXML
-    private PasswordField addPass;
+    private Button exits;
+
+    @FXML
+    private TextField productName;
     @FXML
     void initialize() {
-        
 
 
-        addButton.setOnAction(event -> {
-            signUpNewUser();
+
+        addPr.setOnAction(event -> {
+            addNewProduct();
 
 
         });
@@ -56,14 +66,21 @@ public class addMenControl {
         });
     }
 
-    private void signUpNewUser() {
-        Systema.DataBaseHandler dbHandler = new Systema.DataBaseHandler();
-        String login =addLog.getText();
-        String password=addPass.getText();
-        String firstname=first_name.getText();
-        String secondname=second_name.getText();
-        User user =new User(login,password,firstname,secondname);
-        dbHandler.signUpUser(user);
+    private void addNewProduct() {
+        DataBaseHandler dbHandler = new DataBaseHandler();
+        String productnm = productName.getText();
+        String price = Price.getText();
+        if (this.productName.getText() != "" && this.Price.getText() != "") {
+            try {
+                Integer.parseInt(this.Price.getText());
+            } catch (Exception var2) {
+                Anim Priceadd = new Anim(Price);
+                Priceadd.playAnim();
+                return;
+            }
+            Product product = new Product(productnm, Integer.parseInt(this.Price.getText()));
+            dbHandler.addProduct(product);
+        }
     }
     private void back() {
         Stage stage = (Stage)this.back.getScene().getWindow();

@@ -13,4 +13,8 @@ public class Const {
     public static final String CLIENT_MOBILE="Mobile";
     public static final String CLIENT_DATA="data";
     public static final String CLIENT_TIME="time";
+    public static final String PRODUCT_TABLE="product";
+    public static final String PRODUCT_ID="idproduct";
+    public static final String PRODUCT_NAME="name";
+    public static final String PRODUCT_PRICE="price";
 }
