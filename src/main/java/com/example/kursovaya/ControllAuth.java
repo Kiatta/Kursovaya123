@@ -1,11 +1,21 @@
 package com.example.kursovaya;
 
+import java.io.IOException;
 import java.net.URL;
+import java.sql.ResultSet;
+import java.sql.SQLException;
 import java.util.ResourceBundle;
+
+import Service.User;
+import Systema.DataBaseHandler;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
+import javafx.stage.Stage;
 
 public class ControllAuth {
 
@@ -31,16 +41,38 @@ public class ControllAuth {
                 String loginText=logField.getText().trim();
                 String loginPass=passField.getText().trim();
                 if(!loginPass.equals("")&&!loginText.equals(""))
-                    loginuser(loginText,loginPass);
+                    this.loginuser(loginText,loginPass);
                     else
                         System.out.println("Login and password is empty");
 
             });
 
 
+
     }
 
     private void loginuser(String loginText, String loginPass) {
+        {
+            DataBaseHandler dbHandler =new DataBaseHandler();
+            User user = new User();
+            user.setLogin(loginText);
+            user.setPassword(loginPass);
+
+            ResultSet result = dbHandler.getUser(user);
+            int count=0;
+            while (true){
+                try {
+                    if (!result.next()) break;
+                } catch (SQLException e) {
+                    e.printStackTrace();
+                }
+                count++;
+            }
+            if (count>=1){
+                System.out.println("Пользователь есть");
+            }
+        }
+
     }
 
 }

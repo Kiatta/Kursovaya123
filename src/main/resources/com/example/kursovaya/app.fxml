@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.scene.Cursor?>
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.TableColumn?>
@@ -12,20 +11,17 @@
     <children>
         <AnchorPane layoutY="68.0" prefHeight="333.0" prefWidth="700.0" style="-fx-background-color: fafafa;">
             <children>
-                <Button id="addClient" fx:id="authSign" mnemonicParsing="false" prefHeight="33.0" prefWidth="151.0" style="-fx-background-color: FFC000;" text="Добавить клиента">
+                <Button id="addClient" fx:id="addClient" mnemonicParsing="false" prefHeight="33.0" prefWidth="151.0" style="-fx-background-color: FFC000;" text="Добавить клиента">
                     <font>
                         <Font size="15.0" />
                     </font>
                 </Button>
-            <Button id="addOrd" fx:id="authSign1" alignment="CENTER" layoutY="96.0" mnemonicParsing="false" prefHeight="31.0" prefWidth="151.0" style="-fx-background-color: FFC000; -fx-border-color: 3a49ea;" text="Добавить товар">
+            <Button id="addOrd" fx:id="addOrd" alignment="CENTER" layoutY="95.0" mnemonicParsing="false" prefHeight="31.0" prefWidth="151.0" style="-fx-background-color: FFC000;" text="Добавить товар">
                <font>
                   <Font size="15.0" />
                </font>
-               <cursor>
-                  <Cursor fx:constant="DEFAULT" />
-               </cursor>
             </Button>
-            <Button id="delClient" fx:id="authSign11" layoutY="142.0" mnemonicParsing="false" prefHeight="31.0" prefWidth="151.0" style="-fx-background-color: FFC000;" text="Удалить клинета">
+            <Button id="delClient" fx:id="delClient" layoutY="142.0" mnemonicParsing="false" prefHeight="31.0" prefWidth="151.0" style="-fx-background-color: FFC000;" text="Удалить клинета">
                <font>
                   <Font size="15.0" />
                </font>
@@ -39,23 +35,20 @@
                   <TableColumn prefWidth="94.39996337890625" text="Цена" />
               </columns>
             </TableView>
-            <Button id="infoRes" fx:id="authSign12" layoutX="522.0" layoutY="294.0" mnemonicParsing="false" prefHeight="31.0" prefWidth="170.0" style="-fx-background-color: FFC000;" text="Состояние приборов">
+            <Button id="infoRes" fx:id="infoRes" layoutX="522.0" layoutY="294.0" mnemonicParsing="false" prefHeight="31.0" prefWidth="170.0" style="-fx-background-color: FFC000;" text="Состояние приборов">
                <font>
                   <Font size="15.0" />
                </font>
             </Button>
-            <Button id="updClient" fx:id="authSign2" layoutY="48.0" mnemonicParsing="false" prefHeight="33.0" prefWidth="151.0" style="-fx-background-color: FFC000;" text="Изменить">
+            <Button id="updClient" fx:id="updClient" layoutY="48.0" mnemonicParsing="false" prefHeight="33.0" prefWidth="151.0" style="-fx-background-color: FFC000;" text="Изменить">
                <font>
                   <Font size="15.0" />
                </font>
             </Button>
-            <Button id="addMen" fx:id="authSign13" alignment="CENTER" layoutX="370.0" layoutY="294.0" mnemonicParsing="false" prefHeight="31.0" prefWidth="151.0" style="-fx-background-color: FFC000; -fx-border-color: 3a49ea;" text="Добавить менеджера">
+            <Button id="addMen" fx:id="addMen" alignment="CENTER" layoutX="370.0" layoutY="294.0" mnemonicParsing="false" prefHeight="31.0" prefWidth="151.0" style="-fx-background-color: FFC000;" text="Добавить менеджера">
                <font>
                   <Font size="13.0" />
                </font>
-               <cursor>
-                  <Cursor fx:constant="DEFAULT" />
-               </cursor>
             </Button>
             </children>
         </AnchorPane>
