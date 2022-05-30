@@ -7,26 +7,25 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="700.0" style="-fx-background-color: FFFF00;" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.kursovaya.ControllAuth">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="700.0" style="-fx-background-color: #827397;" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.kursovaya.ControllAuth">
    <children>
-      <AnchorPane layoutY="68.0" prefHeight="333.0" prefWidth="700.0" style="-fx-background-color: fafafa;">
+      <AnchorPane layoutY="68.0" prefHeight="333.0" prefWidth="700.0" style="-fx-background-color: #E9D5CA;">
          <children>
-            <Label layoutX="226.0" layoutY="36.0" prefHeight="53.0" prefWidth="230.0" text="Авторизация" textAlignment="CENTER" textFill="#3a49ea">
+            <Label layoutX="226.0" layoutY="36.0" prefHeight="53.0" prefWidth="230.0" text="Авторизация" textAlignment="CENTER" textFill="#363062">
                <font>
                   <Font name="Bookman Old Style" size="34.0" />
                </font>
             </Label>
             <TextField fx:id="logField" layoutX="226.0" layoutY="115.0" prefHeight="26.0" prefWidth="230.0" promptText="Логин" />
-            <PasswordField fx:id="passField" layoutX="225.0" layoutY="154.0" prefHeight="26.0" prefWidth="230.0" promptText="Пароль" />
-            <Button fx:id="authSign" layoutX="289.0" layoutY="191.0" mnemonicParsing="false" prefHeight="31.0" prefWidth="102.0" style="-fx-background-color: FFC000;" text="Войти">
+            <PasswordField fx:id="passField" layoutX="226.0" layoutY="153.0" prefHeight="26.0" prefWidth="230.0" promptText="Пароль" />
+            <Button fx:id="authSign" layoutX="289.0" layoutY="191.0" mnemonicParsing="false" prefHeight="31.0" prefWidth="102.0" style="-fx-background-color: #827397;" text="Войти">
                <font>
                   <Font name="Bookman Old Style Bold Italic" size="20.0" />
                </font>
             </Button>
          </children>
       </AnchorPane>
-      <Label layoutX="261.0" layoutY="14.0" prefHeight="43.0" prefWidth="178.0" text="4Clients" textAlignment="CENTER" textFill="#3a49ea">
+      <Label layoutX="261.0" layoutY="14.0" prefHeight="43.0" prefWidth="178.0" text="4Clients" textAlignment="CENTER" textFill="#363062">
          <font>
             <Font name="Bookman Old Style" size="35.0" />
          </font>

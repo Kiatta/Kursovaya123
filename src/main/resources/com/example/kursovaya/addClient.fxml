@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="700.0" style="-fx-background-color: #827397;" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.kursovaya.addClientControll">
+    <children>
+        <AnchorPane layoutY="68.0" prefHeight="333.0" prefWidth="700.0" style="-fx-background-color: #E9D5CA;">
+            <children>
+                <Label layoutX="111.0" layoutY="14.0" prefHeight="54.0" prefWidth="478.0" text="Добавление нового клиента" textAlignment="CENTER" textFill="#827397">
+                    <font>
+                        <Font name="Bookman Old Style" size="34.0" />
+                    </font>
+                </Label>
+                <TextField id="first_name" fx:id="FIOClient" layoutX="111.0" layoutY="98.0" prefHeight="26.0" prefWidth="230.0" promptText="ФИО" />
+                <Button id="addButton" fx:id="addClient" layoutX="276.0" layoutY="196.0" mnemonicParsing="false" prefHeight="43.0" prefWidth="130.0" style="-fx-background-color: #827397;" text="Добавить">
+                    <font>
+                        <Font name="Bookman Old Style Bold Italic" size="20.0" />
+                    </font>
+                </Button>
+                <TextField id="second_name" fx:id="numberClient" layoutX="358.0" layoutY="98.0" prefHeight="26.0" prefWidth="230.0" promptText="Номер" />
+            <DatePicker fx:id="dateClient" layoutX="111.0" layoutY="140.0" prefHeight="26.0" prefWidth="230.0" promptText="12/12/2010" />
+            <TextField id="first_name" fx:id="Time" layoutX="358.0" layoutY="140.0" prefHeight="26.0" prefWidth="230.0" promptText="Время" />
+            </children>
+        </AnchorPane>
+        <Label layoutX="261.0" layoutY="14.0" prefHeight="43.0" prefWidth="178.0" text="4Clients" textAlignment="CENTER" textFill="#363062">
+            <font>
+                <Font name="Bookman Old Style" size="35.0" />
+            </font>
+        </Label>
+    </children>
+</AnchorPane>

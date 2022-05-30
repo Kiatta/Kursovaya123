@@ -7,18 +7,18 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="700.0" style="-fx-background-color: FFFF00;" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.kursovaya.addMenControl">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="700.0" style="-fx-background-color: #827397;" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.kursovaya.addMenControl">
     <children>
-        <AnchorPane layoutY="68.0" prefHeight="333.0" prefWidth="700.0" style="-fx-background-color: fafafa;">
+        <AnchorPane layoutY="68.0" prefHeight="333.0" prefWidth="700.0" style="-fx-background-color: #E9D5CA;">
             <children>
-                <Label layoutX="81.0" layoutY="14.0" prefHeight="54.0" prefWidth="538.0" text="Добавление нового менеджера" textAlignment="CENTER" textFill="#3a49ea">
+                <Label layoutX="81.0" layoutY="14.0" prefHeight="54.0" prefWidth="538.0" text="Добавление нового менеджера" textAlignment="CENTER" textFill="#827397">
                     <font>
                         <Font name="Bookman Old Style" size="34.0" />
                     </font>
                 </Label>
                 <TextField id="first_name" fx:id="first_name" layoutX="81.0" layoutY="98.0" prefHeight="26.0" prefWidth="230.0" promptText="Фамилия" />
                 <PasswordField id="addPass" fx:id="addPass" layoutX="388.0" layoutY="140.0" prefHeight="26.0" prefWidth="230.0" promptText="Пароль" />
-                <Button id="addButton" fx:id="addButton" layoutX="285.0" layoutY="200.0" mnemonicParsing="false" prefHeight="43.0" prefWidth="130.0" style="-fx-background-color: FFC000;" text="Добавить">
+                <Button id="addButton" fx:id="addButton" layoutX="285.0" layoutY="200.0" mnemonicParsing="false" prefHeight="43.0" prefWidth="130.0" style="-fx-background-color: #827397;" text="Добавить">
                     <font>
                         <Font name="Bookman Old Style Bold Italic" size="20.0" />
                     </font>
@@ -27,7 +27,7 @@
             <TextField id="second_name" fx:id="second_name" layoutX="388.0" layoutY="98.0" prefHeight="26.0" prefWidth="230.0" promptText="Имя" />
             </children>
         </AnchorPane>
-        <Label layoutX="261.0" layoutY="14.0" prefHeight="43.0" prefWidth="178.0" text="4Clients" textAlignment="CENTER" textFill="#3a49ea">
+        <Label layoutX="261.0" layoutY="14.0" prefHeight="43.0" prefWidth="178.0" text="4Clients" textAlignment="CENTER" textFill="#363062">
             <font>
                 <Font name="Bookman Old Style" size="35.0" />
             </font>

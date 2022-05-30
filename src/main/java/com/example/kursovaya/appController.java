@@ -36,6 +36,12 @@ public class appController {
 
 
         });
+        addClient.setOnAction(event -> {
+
+            this.addclient();
+
+
+        });
     }
         public void addmen() {
             Stage stage = (Stage)this.addMen.getScene().getWindow();
@@ -56,6 +62,25 @@ public class appController {
             stage.setResizable(false);
             stage.show();
         }
+    public void addclient() {
+        Stage stage = (Stage)this.addClient.getScene().getWindow();
+        stage.close();
+        FXMLLoader loader = new FXMLLoader();
+        loader.setLocation(this.getClass().getResource("addClient.fxml"));
+
+        try {
+            loader.load();
+        } catch (IOException var4) {
+            var4.printStackTrace();
+        }
+
+        Parent root = (Parent)loader.getRoot();
+        stage = new Stage();
+        stage.setScene(new Scene(root));
+        stage.setTitle("4Clients apps");
+        stage.setResizable(false);
+        stage.show();
+    }
 
     }
 

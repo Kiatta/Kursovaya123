@@ -7,4 +7,10 @@ public class Const {
     public static final String USERS_PASSWORD="password";
     public static final String USERS_FIRSTNAME="firstname";
     public static final String USERS_SECONDNAME="secondname";
+    public static final String CLIENT_TABLE="client";
+    public static final String CLIENT_ID="idClient";
+    public static final String CLIENT_FIO="FIO";
+    public static final String CLIENT_MOBILE="Mobile";
+    public static final String CLIENT_DATA="data";
+    public static final String CLIENT_TIME="time";
 }

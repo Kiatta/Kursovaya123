@@ -5,6 +5,7 @@ import java.net.URL;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ResourceBundle;
+import javafx.scene.control.Alert;
 
 import Service.User;
 import Systema.DataBaseHandler;
@@ -69,10 +70,38 @@ public class ControllAuth {
                 count++;
             }
             if (count>=1){
-                System.out.println("Пользователь есть");
+
+                authSign();
+            }
+            else {
+                Alert alert = new Alert(Alert.AlertType.ERROR);
+                alert.setTitle("Error");
+                alert.setHeaderText(null);
+                alert.setContentText("Пользователь не найден, проверьте логин и пароль");
+                alert.showAndWait();
+
             }
         }
 
+    }
+    public void authSign() {
+        Stage stage = (Stage)this.authSign.getScene().getWindow();
+        stage.close();
+        FXMLLoader loader = new FXMLLoader();
+        loader.setLocation(this.getClass().getResource("app.fxml"));
+
+        try {
+            loader.load();
+        } catch (IOException var4) {
+            var4.printStackTrace();
+        }
+
+        Parent root = (Parent)loader.getRoot();
+        stage = new Stage();
+        stage.setScene(new Scene(root));
+        stage.setTitle("4Clients apps");
+        stage.setResizable(false);
+        stage.show();
     }
 
 }
