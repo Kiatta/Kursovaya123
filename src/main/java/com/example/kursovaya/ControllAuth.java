@@ -27,7 +27,20 @@ public class ControllAuth {
     @FXML
     void initialize() {
 
+            authSign.setOnAction(event->{
+                String loginText=logField.getText().trim();
+                String loginPass=passField.getText().trim();
+                if(!loginPass.equals("")&&!loginText.equals(""))
+                    loginuser(loginText,loginPass);
+                    else
+                        System.out.println("Login and password is empty");
 
+            });
+
+
+    }
+
+    private void loginuser(String loginText, String loginPass) {
     }
 
 }
