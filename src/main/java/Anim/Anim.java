@@ -9,7 +9,7 @@ public class Anim{
         tt= new TranslateTransition(Duration.millis(70),node);
         tt.setFromX(0f);
         tt.setByX(10f);
-        tt.setCycleCount(3);
+        tt.setCycleCount(4);
         tt.setAutoReverse(true);
     }
     public void playAnim(){

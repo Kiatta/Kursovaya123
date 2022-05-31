@@ -28,8 +28,8 @@
                 <TextField id="addLog" fx:id="Price" layoutX="25.0" layoutY="98.0" prefHeight="26.0" prefWidth="115.0" promptText="Цена" />
             <TableView fx:id="ProductTable" layoutX="150.0" layoutY="52.0" prefHeight="253.0" prefWidth="523.0">
               <columns>
-                <TableColumn prefWidth="260.79998779296875" text="Услуга/товар" />
-                <TableColumn minWidth="0.0" prefWidth="261.5999450683594" text="Цена за ед." />
+                <TableColumn fx:id="TableColumnName" prefWidth="260.79998779296875" text="Услуга/товар" />
+                <TableColumn fx:id="TableColumnPrice" minWidth="0.0" prefWidth="261.5999450683594" text="Цена за ед." />
               </columns>
             </TableView>
             <Button id="addButton" fx:id="delPr" layoutX="25.0" layoutY="185.0" mnemonicParsing="false" prefHeight="30.0" prefWidth="115.0" style="-fx-background-color: #827397;" text="Удалить">

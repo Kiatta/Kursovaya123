@@ -3,26 +3,33 @@ package com.example.kursovaya;
 import Anim.Anim;
 import Service.Product;
 import Systema.DataBaseHandler;
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
+import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.TextField;
-import javafx.scene.image.ImageView;
+import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.stage.Stage;
 import javafx.stage.StageStyle;
 
 import java.io.IOException;
 
 public class ProductControll {
-
+    ObservableList<Product> Products = FXCollections.observableArrayList();
+    @FXML
+    private TableColumn<Product, String> TableColumnName;
+    @FXML
+    private TableColumn<Product, Integer> TableColumnPrice;
     @FXML
     private TextField Price;
 
     @FXML
-    private TableView<?> ProductTable;
+    private TableView<Product> ProductTable;
 
     @FXML
     private Button addPr;
@@ -30,14 +37,10 @@ public class ProductControll {
     @FXML
     private Button back;
 
-    @FXML
-    private ImageView backs;
 
     @FXML
     private Button delPr;
 
-    @FXML
-    private ImageView exit;
 
     @FXML
     private Button exits;
@@ -48,12 +51,16 @@ public class ProductControll {
     void initialize() {
 
 
+        this.Products = DataBaseHandler.readProduct();
+        addColumn();
 
         addPr.setOnAction(event -> {
             addNewProduct();
-
+            this.Products.clear();
+            this.Products = DataBaseHandler.readProduct();
 
         });
+
         back.setOnAction(event -> {
             back();
 
@@ -61,6 +68,12 @@ public class ProductControll {
         });
         exits.setOnAction(event -> {
             System.exit(0);
+
+
+        });
+        delPr.setOnAction(event -> {
+            deleteProduct();
+
 
 
         });
@@ -97,9 +110,27 @@ public class ProductControll {
         Parent root = (Parent)loader.getRoot();
         stage = new Stage();
         stage.setScene(new Scene(root));
-        stage.setTitle("4Clients");
         stage.initStyle(StageStyle.UNDECORATED);
         stage.show();
+    }
+    private void addColumn() {
+
+            this.TableColumnName.setCellValueFactory(new PropertyValueFactory<>("NameProduct"));
+            this.TableColumnPrice.setCellValueFactory(new PropertyValueFactory<>("Price"));
+            this.ProductTable.setItems(this.Products);
+
+
+    }
+    private void deleteProduct() {
+
+        try {
+            DataBaseHandler.delProduct(((Product)this.ProductTable.getSelectionModel().getSelectedItem()).getNameProduct());
+        } catch (Exception var3) {
+
+        }
+        this.Products.clear();
+        this.Products = DataBaseHandler.readProduct();
+        this.addColumn();
     }
 
 }
