@@ -1,21 +1,21 @@
 package Service;
 
 public class EndClient {
-    protected int id;
-    protected String name;
+    protected int idClientpr;
+    protected int idPrclient;
 
 
-    public EndClient(int id, String name) {
-        this.id = id;
-        this.name = name;
+    public EndClient(int idClientpr, int idPrclient) {
+        this.idClientpr = idClientpr;
+        this.idPrclient = idPrclient;
     }
 
-    public int getId() {
-        return id;
+
+    public int getIdClientpr() {
+        return idClientpr;
     }
 
-    public String getName() {
-        return name;
+    public int getIdPrclient() {
+        return idPrclient;
     }
-
 }

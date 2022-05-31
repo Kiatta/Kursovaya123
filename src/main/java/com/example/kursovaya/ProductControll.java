@@ -86,7 +86,7 @@ public class ProductControll {
         if (this.productName.getText() != "" && this.Price.getText() != "") {
             try {
                 Integer.parseInt(this.Price.getText());
-            } catch (Exception var2) {
+            } catch (Exception e) {
                 Anim Priceadd = new Anim(Price);
                 Priceadd.playAnim();
                 return;

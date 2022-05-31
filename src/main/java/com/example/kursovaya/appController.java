@@ -1,18 +1,42 @@
 package com.example.kursovaya;
 
+import Service.Client;
 import Systema.DataBaseHandler;
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
+import javafx.scene.control.TableColumn;
+import javafx.scene.control.TableView;
+import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.stage.Stage;
 import javafx.stage.StageStyle;
 
 import java.io.IOException;
+import java.sql.Date;
 
 public class appController {
+    ObservableList<Client> Clients = FXCollections.observableArrayList();
 
+    @FXML
+    private TableColumn<Client, Date> DateColumn;
+
+    @FXML
+    private TableColumn<Client, String> FioColumn;
+    @FXML
+    private TableColumn<Client, String> Time;
+
+    @FXML
+    private TableColumn<Client, String> NumberColumn;
+
+    @FXML
+    private TableColumn<Client, ?> PriceColumn;
+
+    @FXML
+    private TableView<Client> FnTb;
     @FXML
     private Button exits;
     @FXML
@@ -34,25 +58,34 @@ public class appController {
     @FXML
     private Button addMen;
     @FXML
+    private Button totalClient;
+    @FXML
     void initialize() {
 
+        this.Clients = DataBaseHandler.readClient();
+        addClClient();
         addMen.setOnAction(event -> {
 
             this.addmen();
 
 
         });
+
         addClient.setOnAction(event -> {
 
             this.addclient();
 
 
-        });
-        back.setOnAction(event -> {
-           this.back();
-
 
         });
+        delClient.setOnAction(event -> {
+
+            deleteClient();
+
+
+
+        });
+
         addOrd.setOnAction(event -> {
             this.addOrdBT();
 
@@ -60,6 +93,11 @@ public class appController {
         });
         exits.setOnAction(event -> {
             System.exit(0);
+
+
+        });
+        totalClient.setOnAction(event -> {
+            totCl();
 
 
         });
@@ -100,11 +138,11 @@ public class appController {
         stage.initStyle(StageStyle.UNDECORATED);
         stage.show();
     }
-    private void back() {
-        Stage stage = (Stage)this.back.getScene().getWindow();
+    public void totCl() {
+        Stage stage = (Stage)this.totalClient.getScene().getWindow();
         stage.close();
         FXMLLoader loader = new FXMLLoader();
-        loader.setLocation(this.getClass().getResource("app.fxml"));
+        loader.setLocation(this.getClass().getResource("ClientEnd.fxml"));
 
         try {
             loader.load();
@@ -118,11 +156,10 @@ public class appController {
         stage.initStyle(StageStyle.UNDECORATED);
         stage.show();
     }
-    private void delete() {
 
-    }
+
     private void addOrdBT() {
-        Stage stage = (Stage)this.back.getScene().getWindow();
+        Stage stage = (Stage)this.addOrd.getScene().getWindow();
         stage.close();
         FXMLLoader loader = new FXMLLoader();
         loader.setLocation(this.getClass().getResource("Product.fxml"));
@@ -138,6 +175,28 @@ public class appController {
         stage.setScene(new Scene(root));
         stage.initStyle(StageStyle.UNDECORATED);
         stage.show();
+    }
+
+    private void deleteClient() {
+
+        try {
+            DataBaseHandler.delClient(((Client)this.FnTb.getSelectionModel().getSelectedItem()).getFIO());
+        } catch (Exception var3) {
+
+        }
+        this.Clients.clear();
+        this.Clients = DataBaseHandler.readClient();
+        this.addClClient();
+    }
+    private void addClClient() {
+
+        this.FioColumn.setCellValueFactory(new PropertyValueFactory<>("FIO"));
+        this.NumberColumn.setCellValueFactory(new PropertyValueFactory<>("Mobile"));
+        this.DateColumn.setCellValueFactory(new PropertyValueFactory<>("data"));
+        this.Time.setCellValueFactory(new PropertyValueFactory<>("time"));
+        this.FnTb.setItems(this.Clients);
+
+
     }
 
     }
