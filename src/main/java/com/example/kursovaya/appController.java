@@ -21,6 +21,7 @@ import java.sql.Date;
 public class appController {
     ObservableList<Client> Clients = FXCollections.observableArrayList();
 
+
     @FXML
     private TableColumn<Client, Date> DateColumn;
 
@@ -70,6 +71,12 @@ public class appController {
 
 
         });
+        back.setOnAction(event -> {
+
+            this.Clients = DataBaseHandler.readClient();
+            addClClient();
+
+        });
 
         addClient.setOnAction(event -> {
 
@@ -101,6 +108,13 @@ public class appController {
 
 
         });
+        updClient.setOnAction(event -> {
+
+            updClients();
+
+
+        });
+
     }
         public void addmen() {
             Stage stage = (Stage)this.addMen.getScene().getWindow();
@@ -166,8 +180,8 @@ public class appController {
 
         try {
             loader.load();
-        } catch (IOException var4) {
-            var4.printStackTrace();
+        } catch (IOException e) {
+            e.printStackTrace();
         }
 
         Parent root = (Parent)loader.getRoot();
@@ -198,6 +212,25 @@ public class appController {
 
 
     }
+    private void updClients() {
+
+        FXMLLoader loader = new FXMLLoader();
+        loader.setLocation(this.getClass().getResource("updClient.fxml"));
+
+        try {
+            loader.load();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+
+        Parent root = (Parent)loader.getRoot();
+        Stage stage = new Stage();
+        stage.setScene(new Scene(root));
+        stage.initStyle(StageStyle.UNDECORATED);
+        stage.show();
+    }
+
+
 
     }
 

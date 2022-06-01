@@ -36,7 +36,7 @@
                   <TableColumn fx:id="Time" prefWidth="130.40008544921875" text="Время" />
               </columns>
             </TableView>
-            <Button id="infoRes" fx:id="infoRes" layoutX="522.0" layoutY="294.0" mnemonicParsing="false" prefHeight="31.0" prefWidth="170.0" style="-fx-background-color: #827397;" text="Состояние приборов">
+            <Button id="infoRes" fx:id="endPr" layoutX="522.0" layoutY="294.0" mnemonicParsing="false" prefHeight="31.0" prefWidth="170.0" style="-fx-background-color: #827397;" text="Завершенные услуги">
                <font>
                   <Font size="15.0" />
                </font>
@@ -65,7 +65,7 @@
         </Label>
         <Button fx:id="back" blendMode="SRC_ATOP" layoutX="603.0" layoutY="23.0" mnemonicParsing="false" prefHeight="17.0" prefWidth="17.0" style="-fx-background-color: transparent;">
             <graphic>
-                <ImageView fx:id="backs" fitHeight="17.0" fitWidth="44.0" pickOnBounds="true" preserveRatio="true">
+                <ImageView fx:id="backTot" fitHeight="17.0" fitWidth="44.0" pickOnBounds="true" preserveRatio="true">
                     <image>
                         <Image url="@../../../icons/icons8-назад-24.png" />
                     </image>

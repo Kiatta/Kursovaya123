@@ -5,9 +5,9 @@ import Service.Product;
 import Service.User;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
-import javafx.scene.control.Alert;
 
 import java.sql.*;
+import java.time.LocalDate;
 
 public class DataBaseHandler extends Data {
     private static final ObservableList<Client> Clients = FXCollections.observableArrayList();
@@ -397,9 +397,9 @@ public class DataBaseHandler extends Data {
 
         }
     }
-    public static void updClient(String req, int Id)
+    public static void updClient(String f,String m, Date d,String t, int Id)
     {
-        String sql = "update Orders set Status = '" + req + "' WHERE Id = '" + Id + "'";
+        String sql = "update client set FIO = '" + f + "', Mobile = '" + m + "', data = '" + d + "', time = '" + t +"'" + " WHERE idClient='"+ Id + "'";
         Clients.clear();
         try {
             PreparedStatement prSt = getDbConnection().prepareStatement(sql);
@@ -408,4 +408,54 @@ public class DataBaseHandler extends Data {
             e.printStackTrace();
         }
     }
+    public static String  getMob(int id4upd) {
+        String sql = "SELECT * FROM client WHERE idClient ='"+id4upd+"'";
+        String Mobile = null;
+        try {
+            PreparedStatement prSt = getDbConnection().prepareStatement(sql);
+            ResultSet resultSet = prSt.executeQuery(sql);
+
+            while (resultSet.next()) {
+                Mobile = resultSet.getString("Mobile");
+
+
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        return Mobile;
+    }
+    public static Date getDate(int id4upd) {
+        String sql = "SELECT * FROM client WHERE idClient ='"+id4upd+"'";
+        Date data=null;
+        try {
+            PreparedStatement prSt = getDbConnection().prepareStatement(sql);
+            ResultSet resultSet = prSt.executeQuery(sql);
+
+            while (resultSet.next()) {
+                 data = resultSet.getDate("data");
+
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        return data;
+    }
+    public static String getTime(int id4upd) {
+        String sql = "SELECT * FROM client WHERE idClient ='"+id4upd+"'";
+        String time=null;
+        try {
+            PreparedStatement prSt = getDbConnection().prepareStatement(sql);
+            ResultSet resultSet = prSt.executeQuery(sql);
+
+            while (resultSet.next()) {
+                time = resultSet.getString("time");
+
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        return time;
+    }
+
 }

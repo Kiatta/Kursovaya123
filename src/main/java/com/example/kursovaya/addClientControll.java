@@ -1,21 +1,19 @@
 package com.example.kursovaya;
 
 import Service.Client;
-import Service.User;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.DatePicker;
-import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
 import javafx.stage.Stage;
 import javafx.stage.StageStyle;
 
 import java.io.IOException;
 import java.sql.Date;
-import java.time.LocalDate;
+
 
 public class addClientControll {
 
